@@ -10,28 +10,37 @@ import model.entities.Department;
 public class Program2 {
 
 	public static void main(String[] args) {
-		
+
 		Scanner sc = new Scanner(System.in);
-		
+
 		DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
-		
+
 		System.out.println("\"=== TEST 1: Department findById ===\"");
 		Department dep = departmentDao.findById(1);
 		System.out.println(dep);
-		
+
 		System.out.println();
 		System.out.println("\"=== TEST 2: Department findAll ===\"");
 		List<Department> list = departmentDao.findAll();
-		for(Department x: list) {
+
+		for (Department x : list) {
 			System.out.println(x);
 		}
-		
+
 		System.out.println();
 		System.out.println("\"=== TEST 3: Department insert ===\"");
-		Department department = new Department(5,"music");
-		departmentDao.insert(department);
+		departmentDao.insert(new Department(9, "igreja"));
 		System.out.println("Insert sucess");
-
+		
+		System.out.println();
+		System.out.println("\" ==== TEST 4: Department UPdate ===\"");
+		dep = departmentDao.findById(7);
+		dep.setName("Templo");
+		departmentDao.update(dep);
+		System.out.println("Update completed");
+		
+		
+		
 		sc.close();
 	}
 
