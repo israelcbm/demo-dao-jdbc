@@ -29,7 +29,7 @@ public class Program2 {
 
 		System.out.println();
 		System.out.println("\"=== TEST 3: Department insert ===\"");
-		departmentDao.insert(new Department(9, "igreja"));
+		departmentDao.insert(new Department(10, "igreja"));
 		System.out.println("Insert sucess");
 		
 		System.out.println();
@@ -39,6 +39,10 @@ public class Program2 {
 		departmentDao.update(dep);
 		System.out.println("Update completed");
 		
+		System.out.println();
+		System.out.println("\" ==== TEST 5: Department Delete ====\"");
+		departmentDao.deleteById(8);
+		System.out.println("Delete completed");
 		
 		
 		sc.close();
